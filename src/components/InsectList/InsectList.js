@@ -2,12 +2,12 @@ import React from 'react';
 import CardInsect from '../CardInsect/CardInsect';
 import { Col, Row } from 'react-bootstrap';
 
-const InsectList = () => {
+const InsectList = ({insectList}) => {
     return (
         <Row xs={1} md={2} className="g-4">
-            {Array.from({ length: 4 }).map((_, idx) => (
+            {insectList.map((insect, idx) => (
                 <Col key={idx}>
-                    <CardInsect></CardInsect>
+                    <CardInsect insect={insect}></CardInsect>
                 </Col>
             ))}
         </Row>
