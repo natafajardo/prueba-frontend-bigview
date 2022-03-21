@@ -1,13 +1,11 @@
 import React from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
-import { useState, useEffect } from "react";
-
-
-
-
-
+import { useState } from "react";
+import ModalPut from "../ModalPut/ModalPut";
 
 const CardInsect = ({ insect }) => {
+
+  const [showEdit, setshowEdit] = useState(false);
 
   const insectDelete = () => {
 
@@ -26,8 +24,6 @@ const CardInsect = ({ insect }) => {
       });
 
   }
-
-
 
   const lauchModalDelete = () => {
     setshowModalDelete(true);
@@ -71,27 +67,9 @@ const CardInsect = ({ insect }) => {
           </Modal.Footer>
         </Modal.Dialog>
       </Modal>
-
-      <Modal show={showModalEdite} onHide={setshowModalEdite}>
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>
-            <p>Modal body text goes here.</p>
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
-          </Modal.Footer>
-        </Modal.Dialog>
-      </Modal>
+      <ModalPut insect={insect} showModal={showEdit}/>
 
     </div>
-
-
   )
 }
 

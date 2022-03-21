@@ -53,8 +53,6 @@ const ModalPost = () => {
 
   return (
     <div>
-
-      <Button className="btn-btn-secondary me-2" onClick={launchModal}>Crear</Button>
       <Modal show={showModal} onHide={setshowModal}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Nuevo Insecto</Modal.Title>
