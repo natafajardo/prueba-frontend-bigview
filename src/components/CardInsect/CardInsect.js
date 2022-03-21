@@ -1,8 +1,17 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
+
+
+
+
+
 const CardInsect = ({insect}) => {
+
+
     return (
+      <div>
+      
         <Card>
         <Card.Img variant="top" src={insect.image} />
         <Card.Body>
@@ -16,6 +25,7 @@ const CardInsect = ({insect}) => {
           <Button className="btn-warning me-2">Editar</Button>
         </Card.Body>
       </Card>
+      </div>
     )
 }
 
