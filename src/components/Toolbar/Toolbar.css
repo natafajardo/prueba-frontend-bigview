@@ -1,0 +1,11 @@
+.collapse-user {
+    color: black;
+}
+.collapse-user a, 
+.collapse-user a:focus {
+    color: #fff;
+}
+
+.collapse-user.show a {
+    color: black;
+}

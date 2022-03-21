@@ -8,6 +8,7 @@ import ModalPost from "./components/ModalPost/ModalPost";
 
 function App() {
   const [insectList, setInsectList] = useState([]);
+  const [showPostModal, setShowPostModal] = useState(false);
  
   const fetchClassifications = () => {
     fetch(`/api/Classifications`)
@@ -19,13 +20,19 @@ function App() {
     fetchClassifications();
   }, []);
 
-
+ const showCreateModal = () => {
+   console.log("hola");
+   setShowPostModal(true);
+ }
+ const hideModal = () => {
+   setShowPostModal(false);
+ }
   
 
   return (
     <div className="App">
-      <Toolbar />
-      <ModalPost/>
+      <Toolbar showCreateModal={showCreateModal}/>
+      <ModalPost showModal={showPostModal} hideModal={hideModal}/>
       <div className="container pt-5">
         <InsectList insectList={insectList}/>
       </div>

@@ -1,16 +1,15 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import "./Toolbar.css";
 
-const Toolbar = () => {
+const Toolbar = ({showCreateModal}) => {
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                <Nav>
-                    <NavDropdown title="Natalia Fajardo" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Ver Perfil</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.4">Cerrar</NavDropdown.Item>
-                    </NavDropdown>
+                <Navbar.Brand href="#home">Insectos</Navbar.Brand>
+                <Nav className="me-auto my-2 my-lg-0">
+                    <Nav.Link className="justify-content-end" href="#home" onClick={showCreateModal}>Crear</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

@@ -3,13 +3,8 @@ import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 
 
-const ModalPost = () => {
+const ModalPost = ({showModal, hideModal}) => {
 
-  const launchModal = () => {
-    setshowModal(true);
-  }
-
-  const [showModal, setshowModal] = useState(false);
 
   const [data, setdata] = useState({ image: "", scientificName: "", families: "", lifespan: "", order: "", phylum: "", kingdom: "" });
 
@@ -19,8 +14,6 @@ const ModalPost = () => {
       [target.name]: target.value
     })
   }
-
-  const url = "https://insectsapi.azurewebsites.net";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +46,7 @@ const ModalPost = () => {
 
   return (
     <div>
-      <Modal show={showModal} onHide={setshowModal}>
+      <Modal show={showModal} onHide={hideModal}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Nuevo Insecto</Modal.Title>
         </Modal.Header>
