@@ -3,17 +3,15 @@ import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 
 
-const ModalPut = ({insect, showModal}) => {
-  const [newInsect, setNewinsect] = useState(insect)
-
+const ModalPut = ({insect, showModal, hideEditModal}) => {
+  
+  const [newInsect, setNewinsect] = useState(insect);
+  delete newInsect.locations;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  if (showModal) {
-    handleShow();
-  }
 
   const handleChange = ({ target }) => {
     setNewinsect({
@@ -32,7 +30,7 @@ const ModalPut = ({insect, showModal}) => {
         'Content-Type': 'application/json',
       },
       
-      body: insect,
+      body: JSON.stringify(newInsect),
 
     };
     console.log(options.body);
@@ -40,15 +38,16 @@ const ModalPut = ({insect, showModal}) => {
     fetch(`/api/Classifications/${insect.id}`, options)
       .then(response => {
         console.log(response);
+        hideEditModal();
       })
       .catch((err) => console.log(err));
   }
 
   return (
     <div>
-      <Modal show={showModal} onHide={handleClose}>
+      <Modal show={showModal} onHide={() => hideEditModal()}>
         <Modal.Header closeButton>
-          <Modal.Title>Crear Nuevo Insecto</Modal.Title>
+          <Modal.Title>Editar Insecto</Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>
         <Modal.Body>
