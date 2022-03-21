@@ -7,6 +7,11 @@ const ModalPut = ({insect, showModal, hideEditModal}) => {
   
   const [newInsect, setNewinsect] = useState(insect);
   delete newInsect.locations;
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
 
   const handleChange = ({ target }) => {
     setNewinsect({
