@@ -5,7 +5,6 @@ import ModalPut from "../ModalPut/ModalPut";
 
 const CardInsect = ({ insect }) => {
 
-  const [showEdit, setshowEdit] = useState(false);
 
   const insectDelete = () => {
 
@@ -31,6 +30,9 @@ const CardInsect = ({ insect }) => {
 
   const lauchModalEdite = () => {
     setshowModalEdite(true);
+  }
+  const hideEditModal = () => {
+    setshowModalEdite(false);
   }
   const [showModalDelete, setshowModalDelete] = useState(false);
   const [showModalEdite, setshowModalEdite] = useState(false);
@@ -67,7 +69,7 @@ const CardInsect = ({ insect }) => {
           </Modal.Footer>
         </Modal.Dialog>
       </Modal>
-      <ModalPut insect={insect} showModal={showEdit}/>
+      <ModalPut insect={insect} showModal={showModalEdite} hideEditModal={hideEditModal}/>
 
     </div>
   )
