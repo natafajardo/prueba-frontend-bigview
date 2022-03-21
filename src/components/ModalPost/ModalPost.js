@@ -25,12 +25,17 @@ const ModalPost = () => {
           method: 'POST',
           headers: {
           'Content-Type': 'application/json',
+          'Accept': 'text/plain',
           },
           mode: 'no-cors',
-          body: JSON.stringify(data),
-          };
+          body: data,
 
-      fetch(`${url}/api/Classifications`, options)
+          };
+          console.log(options.body);
+
+
+
+      fetch(`/api/Classifications`, options)
           .then(response => {
             console.log(response);
           }) 

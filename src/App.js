@@ -7,9 +7,9 @@ import ModalPost from "./components/ModalPost/ModalPost";
 
 function App() {
   const [insectList, setInsectList] = useState([]);
-  const url = "https://insectsapi.azurewebsites.net";
+ 
   const fetchClassifications = () => {
-    fetch(`${url}/api/Classifications`)
+    fetch(`/api/Classifications`)
       .then((response) => response.json())
       .then((data) => setInsectList(data))
       .catch((error) => console.log(error));
