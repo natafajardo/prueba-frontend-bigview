@@ -80,7 +80,7 @@ const ModalPut = ({insect, showModal, hideEditModal}) => {
             </Form.Group> 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="success" type="submit">
+          <Button variant="warning" type="submit">
             Guardar
           </Button>
         </Modal.Footer>

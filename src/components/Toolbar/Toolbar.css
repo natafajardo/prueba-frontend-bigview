@@ -9,3 +9,7 @@
 .collapse-user.show a {
     color: black;
 }
+
+.bg-dark {
+    background-color: #0d2137;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
 import { useState } from "react";
 import ModalPut from "../ModalPut/ModalPut";
+import "./CardInsect.css";
 
 const CardInsect = ({ insect }) => {
 
@@ -41,16 +42,16 @@ const CardInsect = ({ insect }) => {
     <div>
 
       <Card>
-        <Card.Img variant="top" src={insect.image} />
+        <Card.Img  className="image-card" variant="top" src={insect.image} />
         <Card.Body>
           <Card.Title>{insect.scientificName}</Card.Title>
-          <Card.Text>Familias: {insect.families}</Card.Text>
-          <Card.Text>Esperanza de Vida: {insect.lifespan}</Card.Text>
+          <Card.Text>{insect.families}</Card.Text>
+          <Card.Text>{insect.lifespan}</Card.Text>
           <Card.Text>{insect.order}</Card.Text>
           <Card.Text>{insect.phylum}</Card.Text>
           <Card.Text>{insect.kingdom}</Card.Text>
           <Button className="btn-danger me-2" onClick={lauchModalDelete}>Eliminar</Button>
-          <Button className="btn-secondary me-2" onClick={lauchModalEdite}>Editar</Button>
+          <Button className="btn-warning me-2" onClick={lauchModalEdite}>Editar</Button>
         </Card.Body>
       </Card>
 
@@ -65,7 +66,7 @@ const CardInsect = ({ insect }) => {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={insectDelete}>Confirmar</Button>
+            <Button variant="danger" onClick={insectDelete}>Confirmar</Button>
           </Modal.Footer>
         </Modal.Dialog>
       </Modal>
