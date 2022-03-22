@@ -18,7 +18,7 @@ function App() {
   };
   useEffect(() => {
     fetchClassifications();
-  }, []);
+  }, [insectList]);
 
  const showCreateModal = () => {
    console.log("hola");
