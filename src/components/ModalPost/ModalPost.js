@@ -26,6 +26,14 @@ const ModalPost = ({showModal, hideModal}) => {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'text/plain',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept': '*/*',
+        'Host': '<calculated when request is sent>',
+        'Content-Length': '<calculated when request is sent>',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Cookie': 'ARRAffinity=79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5; ARRAffinitySameSite=79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
+
       },
       mode: 'no-cors',
       body: data,
